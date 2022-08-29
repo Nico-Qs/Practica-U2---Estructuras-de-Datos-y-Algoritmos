@@ -28,7 +28,7 @@ class PilaCoEncadenada:
     
     def insertar(self,elemento):
         nuevaNodo = Nodo(elemento)
-        if self.__ultimo == None:
+        if self.Vacia():
             self.__primero = nuevaNodo
         else:
             self.__ultimo.setSiguiente(nuevaNodo)
