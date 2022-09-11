@@ -18,7 +18,7 @@ class Nodo:
     def getDato(self):
         return self.__dato
 
-class PilaCoEncadenada:
+class ColaEncadenada:
     __primero: Nodo
     __ultimo: Nodo
     
@@ -56,7 +56,7 @@ class PilaCoEncadenada:
 
 
 if __name__ == "__main__":
-    Pila = PilaCoEncadenada()
+    Pila = ColaEncadenada()
     Pila.insertar(1)
     Pila.insertar(2)
     Pila.insertar(3)

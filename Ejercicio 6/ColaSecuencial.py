@@ -1,7 +1,7 @@
 import numpy as np
-class PilaCola:
+class ColaSecuencial:
     __items: np.array
-    __top: int #cantidad de elementos en la pila
+    __top: int #cantidad de elementos en la cola
     __prim: int
     __ult: int
     __cantidad: int #max
@@ -25,24 +25,30 @@ class PilaCola:
             print("Pila llena")
         
     def suprimir(self):
+        x = None
         if not self.Vacia():
+            x = self.__items[self.__prim]
             np.delete(self.__items,self.__prim)
             self.__prim = (self.__prim + 1)%self.__cantidad #elimina el primer elemento de la pila
             self.__top -= 1 
         else:
             print("Pila vacia")
+        return x
     
     def recorrer(self):
-        aux = self.__prim
-        for i in range(self.__top):
-            print(self.__items[aux])
-            aux += 1
+        while not self.Vacia():
+            print(self.suprimir())
+        """for _ in range(self.__cantidad):
+            if not self.Vacia():
+                print(self.suprimir())"""
+
 
 if __name__ == "__main__":
-    PilaCola = PilaCola(4)
-    PilaCola.insertar(1)
-    PilaCola.insertar(2)
-    PilaCola.insertar(3)
-    PilaCola.insertar(4)
-    PilaCola.suprimir()
-    PilaCola.recorrer()
+    ColaSecuencial_ = ColaSecuencial(5)
+    ColaSecuencial_.insertar(1)
+    ColaSecuencial_.insertar(2)
+    ColaSecuencial_.insertar(3)
+    ColaSecuencial_.insertar(4)
+    ColaSecuencial_.suprimir()
+    ColaSecuencial_.insertar(10)
+    ColaSecuencial_.recorrer()
